@@ -1,0 +1,1516 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Servicio AguaExpress | Pipas de Agua Potable en CDMX</title>
+
+  <meta 
+    name="description" 
+    content="Servicio AguaExpress ofrece transporte de agua potable en pipa en CDMX. Atención express, diferentes capacidades y servicio los 365 días del año."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700;800&display=swap" 
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --blue-dark: #073763;
+      --blue-main: #0077b6;
+      --blue-light: #00a8e8;
+      --sky: #caf0f8;
+      --white: #ffffff;
+      --gray: #f3f8fb;
+      --text: #102a43;
+      --muted: #5d7285;
+      --black: #071421;
+      --success: #16a34a;
+      --shadow: 0 18px 45px rgba(7, 55, 99, 0.15);
+      --radius: 22px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Montserrat", sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    .top-bar {
+      background: var(--blue-dark);
+      color: var(--white);
+      font-size: 0.9rem;
+      padding: 10px 0;
+    }
+
+    .top-bar .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .top-bar strong {
+      color: var(--sky);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0, 119, 182, 0.12);
+    }
+
+    .nav {
+      min-height: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand img {
+      width: 74px;
+      height: 74px;
+      object-fit: contain;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .brand-text strong {
+      font-family: "Anton", sans-serif;
+      font-size: 1.35rem;
+      letter-spacing: 1px;
+      color: var(--blue-dark);
+      text-transform: uppercase;
+    }
+
+    .brand-text span {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--blue-main);
+      text-transform: uppercase;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    nav a {
+      font-weight: 700;
+      font-size: 0.93rem;
+      color: var(--text);
+      transition: 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--blue-main);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: none;
+      cursor: pointer;
+      border-radius: 999px;
+      padding: 14px 24px;
+      font-weight: 800;
+      transition: 0.2s ease;
+      font-family: "Montserrat", sans-serif;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue-main), var(--blue-light));
+      color: var(--white);
+      box-shadow: 0 10px 25px rgba(0, 119, 182, 0.28);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 35px rgba(0, 119, 182, 0.35);
+    }
+
+    .btn-outline {
+      border: 2px solid var(--blue-main);
+      color: var(--blue-main);
+      background: var(--white);
+    }
+
+    .btn-outline:hover {
+      background: var(--blue-main);
+      color: var(--white);
+    }
+
+    .btn-whatsapp {
+      background: var(--success);
+      color: var(--white);
+      box-shadow: 0 10px 25px rgba(22, 163, 74, 0.22);
+    }
+
+    .btn-whatsapp:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 35px rgba(22, 163, 74, 0.30);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top right, rgba(0, 168, 232, 0.18), transparent 35%),
+        linear-gradient(135deg, #f7fcff 0%, #e9f8ff 100%);
+      padding: 82px 0 70px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: rgba(0, 168, 232, 0.12);
+      right: -160px;
+      top: 60px;
+    }
+
+    .hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--white);
+      color: var(--blue-dark);
+      border: 1px solid rgba(0, 119, 182, 0.18);
+      border-radius: 999px;
+      padding: 9px 15px;
+      font-size: 0.88rem;
+      font-weight: 800;
+      box-shadow: 0 8px 25px rgba(7, 55, 99, 0.08);
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-family: "Anton", sans-serif;
+      color: var(--blue-dark);
+      font-size: clamp(2.6rem, 6vw, 5.2rem);
+      line-height: 0.98;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+      color: var(--blue-main);
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 620px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 26px;
+    }
+
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      max-width: 680px;
+    }
+
+    .hero-point {
+      background: var(--white);
+      border-radius: 18px;
+      padding: 14px;
+      box-shadow: 0 10px 28px rgba(7, 55, 99, 0.08);
+      border: 1px solid rgba(0, 119, 182, 0.12);
+    }
+
+    .hero-point strong {
+      display: block;
+      color: var(--blue-dark);
+      font-size: 0.95rem;
+    }
+
+    .hero-point span {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .hero-card {
+      background: var(--white);
+      border-radius: 32px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0, 119, 182, 0.13);
+      position: relative;
+    }
+
+    .hero-card img {
+      width: min(360px, 100%);
+      margin: 0 auto 18px;
+    }
+
+    .hero-card-info {
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue-main));
+      color: var(--white);
+      border-radius: 24px;
+      padding: 22px;
+      text-align: center;
+    }
+
+    .hero-card-info h3 {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+
+    .hero-card-info p {
+      color: rgba(255,255,255,0.86);
+      margin: 0;
+      font-size: 0.96rem;
+    }
+
+    section {
+      padding: 76px 0;
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 42px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--blue-main);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      margin-bottom: 8px;
+      font-size: 0.85rem;
+    }
+
+    .section-head h2 {
+      font-family: "Anton", sans-serif;
+      color: var(--blue-dark);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .features {
+      background: var(--white);
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .feature-card {
+      background: var(--gray);
+      border-radius: var(--radius);
+      padding: 24px;
+      border: 1px solid rgba(0, 119, 182, 0.10);
+      transition: 0.2s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 32px rgba(7, 55, 99, 0.10);
+      background: var(--white);
+    }
+
+    .icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--blue-main), var(--blue-light));
+      color: var(--white);
+      font-size: 1.35rem;
+      margin-bottom: 16px;
+    }
+
+    .feature-card h3 {
+      color: var(--blue-dark);
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+    }
+
+    .feature-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .capacities {
+      background:
+        linear-gradient(rgba(7, 55, 99, 0.92), rgba(7, 55, 99, 0.92)),
+        radial-gradient(circle at top left, rgba(0,168,232,0.35), transparent 35%);
+      color: var(--white);
+    }
+
+    .capacities .section-head h2,
+    .capacities .section-head p {
+      color: var(--white);
+    }
+
+    .capacity-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px;
+    }
+
+    .capacity-card {
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 22px;
+      padding: 24px 14px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .capacity-card strong {
+      display: block;
+      font-family: "Anton", sans-serif;
+      font-size: 1.7rem;
+      letter-spacing: 1px;
+      color: var(--sky);
+    }
+
+    .capacity-card span {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.80);
+    }
+
+    .clients {
+      background: var(--gray);
+    }
+
+    .client-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .client-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 24px;
+      border: 1px solid rgba(0, 119, 182, 0.10);
+      box-shadow: 0 12px 28px rgba(7, 55, 99, 0.07);
+    }
+
+    .client-card h3 {
+      color: var(--blue-dark);
+      margin-bottom: 8px;
+    }
+
+    .client-card p {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .coverage-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .coverage-box {
+      background: linear-gradient(135deg, var(--blue-main), var(--blue-light));
+      border-radius: 32px;
+      padding: 32px;
+      color: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .coverage-box h2 {
+      font-family: "Anton", sans-serif;
+      font-size: 2.7rem;
+      line-height: 1;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .coverage-box p {
+      color: rgba(255,255,255,0.88);
+      margin-bottom: 24px;
+    }
+
+    .zones {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .zone {
+      background: var(--white);
+      border-radius: 18px;
+      padding: 17px;
+      border: 1px solid rgba(0, 119, 182, 0.12);
+      color: var(--blue-dark);
+      font-weight: 800;
+      box-shadow: 0 10px 22px rgba(7, 55, 99, 0.07);
+    }
+
+    .steps {
+      background: var(--gray);
+    }
+
+    .step-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+
+    .step-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 24px;
+      border: 1px solid rgba(0, 119, 182, 0.10);
+      position: relative;
+    }
+
+    .step-number {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--blue-main);
+      color: var(--white);
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .step-card h3 {
+      font-size: 1rem;
+      color: var(--blue-dark);
+      margin-bottom: 8px;
+    }
+
+    .step-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .quote-section {
+      background: var(--white);
+    }
+
+    .quote-wrap {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 36px;
+      align-items: start;
+    }
+
+    .quote-info {
+      background: linear-gradient(135deg, var(--blue-dark), #0b4f87);
+      color: var(--white);
+      border-radius: 32px;
+      padding: 32px;
+      position: sticky;
+      top: 110px;
+      box-shadow: var(--shadow);
+    }
+
+    .quote-info h2 {
+      font-family: "Anton", sans-serif;
+      text-transform: uppercase;
+      font-size: 2.5rem;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .quote-info p {
+      color: rgba(255,255,255,0.86);
+      margin-bottom: 22px;
+    }
+
+    .quote-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .quote-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: rgba(255,255,255,0.92);
+    }
+
+    .quote-list li::before {
+      content: "✓";
+      color: var(--sky);
+      font-weight: 900;
+    }
+
+    .payment-box {
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 20px;
+      padding: 18px;
+      margin-top: 18px;
+    }
+
+    .payment-box strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--sky);
+    }
+
+    form {
+      background: var(--gray);
+      border-radius: 32px;
+      padding: 30px;
+      border: 1px solid rgba(0, 119, 182, 0.12);
+      box-shadow: 0 14px 35px rgba(7, 55, 99, 0.08);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-weight: 800;
+      color: var(--blue-dark);
+      font-size: 0.92rem;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid rgba(0, 119, 182, 0.20);
+      border-radius: 16px;
+      padding: 14px 15px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.95rem;
+      outline: none;
+      background: var(--white);
+      color: var(--text);
+      transition: 0.2s ease;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--blue-main);
+      box-shadow: 0 0 0 4px rgba(0, 119, 182, 0.12);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-actions {
+      grid-column: 1 / -1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-top: 8px;
+    }
+
+    .form-note {
+      grid-column: 1 / -1;
+      color: var(--muted);
+      font-size: 0.86rem;
+      margin-top: 6px;
+    }
+
+    .contact {
+      background:
+        radial-gradient(circle at bottom left, rgba(0,168,232,0.20), transparent 30%),
+        linear-gradient(135deg, #f7fcff, #e9f8ff);
+    }
+
+    .contact-card {
+      background: var(--white);
+      border-radius: 34px;
+      padding: 36px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0, 119, 182, 0.12);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .contact-card h2 {
+      font-family: "Anton", sans-serif;
+      color: var(--blue-dark);
+      font-size: 3rem;
+      line-height: 1;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .contact-card p {
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .contact-details {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-detail {
+      background: var(--gray);
+      border-radius: 18px;
+      padding: 18px;
+      border: 1px solid rgba(0, 119, 182, 0.10);
+    }
+
+    .contact-detail span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .contact-detail strong {
+      color: var(--blue-dark);
+      font-size: 1.06rem;
+    }
+
+    footer {
+      background: var(--black);
+      color: var(--white);
+      padding: 34px 0;
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .footer-brand img {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+      background: var(--white);
+      border-radius: 14px;
+      padding: 4px;
+    }
+
+    .footer-brand strong {
+      display: block;
+      font-family: "Anton", sans-serif;
+      letter-spacing: 1px;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+    }
+
+    .footer-brand span,
+    .footer-copy {
+      color: rgba(255,255,255,0.70);
+      font-size: 0.9rem;
+    }
+
+    .floating-whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 200;
+      background: var(--success);
+      color: var(--white);
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 1.8rem;
+      box-shadow: 0 15px 35px rgba(22, 163, 74, 0.38);
+      transition: 0.2s ease;
+    }
+
+    .floating-whatsapp:hover {
+      transform: translateY(-4px) scale(1.03);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: var(--blue-main);
+      color: var(--white);
+      border: none;
+      border-radius: 12px;
+      padding: 10px 12px;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .coverage-grid,
+      .quote-wrap,
+      .contact-card {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .capacity-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .step-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .quote-info {
+        position: static;
+      }
+
+      nav {
+        display: none;
+        position: absolute;
+        top: 84px;
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        border-bottom: 1px solid rgba(0, 119, 182, 0.12);
+        padding: 20px 0;
+      }
+
+      nav.active {
+        display: block;
+      }
+
+      nav ul {
+        width: min(1120px, 92%);
+        margin: 0 auto;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .top-bar .container {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .brand img {
+        width: 60px;
+        height: 60px;
+      }
+
+      .brand-text strong {
+        font-size: 1.05rem;
+      }
+
+      .brand-text span {
+        font-size: 0.68rem;
+      }
+
+      .hero {
+        padding: 52px 0 48px;
+      }
+
+      .hero-actions,
+      .form-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .hero-points,
+      .feature-grid,
+      .client-grid,
+      .zones,
+      .form-grid,
+      .capacity-grid,
+      .step-grid {
+        grid-template-columns: 1fr;
+      }
+
+      form,
+      .quote-info,
+      .contact-card {
+        padding: 24px;
+        border-radius: 24px;
+      }
+
+      .contact-card h2 {
+        font-size: 2.3rem;
+      }
+
+      .footer-grid {
+        text-align: center;
+        justify-content: center;
+      }
+
+      .footer-brand {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="top-bar">
+    <div class="container">
+      <span>Servicio de pipas de agua potable en CDMX</span>
+      <span><strong>Horario:</strong> 5:00 am a 11:00 pm · Los 365 días</span>
+    </div>
+  </div>
+
+  <header>
+    <div class="container nav">
+      <a href="#inicio" class="brand">
+        <img src="images/logo.png" alt="Logo Servicio AguaExpress">
+        <div class="brand-text">
+          <strong>Servicio AguaExpress</strong>
+          <span>Agua potable en pipa</span>
+        </div>
+      </a>
+
+      <button class="mobile-menu-btn" id="menuBtn">☰</button>
+
+      <nav id="menu">
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#capacidades">Capacidades</a></li>
+          <li><a href="#cobertura">Cobertura</a></li>
+          <li><a href="#cotizacion">Cotizar</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <li>
+            <a class="btn btn-primary" href="https://wa.me/525545009751" target="_blank">
+              WhatsApp
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+
+        <div>
+          <div class="badge">💧 Atención express en CDMX</div>
+
+          <h1>
+            Pipas de <span>agua potable</span> cuando más la necesitas
+          </h1>
+
+          <p>
+            Transporte de agua potable en pipa para casas, condominios, centros comerciales,
+            purificadoras, negocios y público en general.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-whatsapp" href="https://wa.me/525545009751" target="_blank">
+              Cotizar por WhatsApp
+            </a>
+
+            <a class="btn btn-outline" href="tel:5545009751">
+              Llamar ahora
+            </a>
+          </div>
+
+          <div class="hero-points">
+            <div class="hero-point">
+              <strong>365 días</strong>
+              <span>Servicio todo el año</span>
+            </div>
+
+            <div class="hero-point">
+              <strong>5 am a 11 pm</strong>
+              <span>Amplio horario</span>
+            </div>
+
+            <div class="hero-point">
+              <strong>Pago contra entrega</strong>
+              <span>Efectivo, tarjeta o transferencia</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <img src="images/logo.png" alt="Servicio AguaExpress">
+
+          <div class="hero-card-info">
+            <h3>Agua potable certificada</h3>
+            <p>
+              Servicio profesional sujeto a disponibilidad de zona, capacidad y condiciones de descarga.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="features" id="servicio">
+      <div class="container">
+
+        <div class="section-head">
+          <span class="eyebrow">Nuestro servicio</span>
+          <h2>Confianza, rapidez y agua potable</h2>
+          <p>
+            En Servicio AguaExpress contamos con unidades de distintas capacidades
+            para adaptarnos a las necesidades de cada cliente.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+
+          <div class="feature-card">
+            <div class="icon">💧</div>
+            <h3>Agua potable</h3>
+            <p>
+              Contamos con certificación de agua potable conforme a la NOM-127-SSA1.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon">🚚</div>
+            <h3>Diferentes pipas</h3>
+            <p>
+              Capacidades desde 2,500 hasta 45,000 litros, según el tipo de servicio.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon">⚡</div>
+            <h3>Atención express</h3>
+            <p>
+              Servicio rápido en alcaldías seleccionadas de la Ciudad de México.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon">📆</div>
+            <h3>Todos los días</h3>
+            <p>
+              Trabajamos de lunes a domingo, los 365 días del año.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="capacities" id="capacidades">
+      <div class="container">
+
+        <div class="section-head">
+          <span class="eyebrow">Capacidades</span>
+          <h2>Pipas para cada necesidad</h2>
+          <p>
+            Desde casa habitación hasta abastecimiento para condominios,
+            negocios, purificadoras y centros comerciales.
+          </p>
+        </div>
+
+        <div class="capacity-grid">
+
+          <div class="capacity-card">
+            <strong>2,500</strong>
+            <span>litros</span>
+          </div>
+
+          <div class="capacity-card">
+            <strong>5,000</strong>
+            <span>litros</span>
+          </div>
+
+          <div class="capacity-card">
+            <strong>7,500</strong>
+            <span>litros</span>
+          </div>
+
+          <div class="capacity-card">
+            <strong>10,000</strong>
+            <span>litros</span>
+          </div>
+
+          <div class="capacity-card">
+            <strong>20,000</strong>
+            <span>litros</span>
+          </div>
+
+          <div class="capacity-card">
+            <strong>45,000</strong>
+            <span>litros</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="clients" id="clientes">
+      <div class="container">
+
+        <div class="section-head">
+          <span class="eyebrow">Clientes</span>
+          <h2>Atendemos a todo tipo de clientes</h2>
+          <p>
+            Brindamos servicio de transporte de agua potable para necesidades particulares,
+            comerciales y empresariales.
+          </p>
+        </div>
+
+        <div class="client-grid">
+
+          <div class="client-card">
+            <h3>Casas habitación</h3>
+            <p>
+              Abastecimiento de agua potable para hogares, cisternas y necesidades familiares.
+            </p>
+          </div>
+
+          <div class="client-card">
+            <h3>Condominios</h3>
+            <p>
+              Servicio para conjuntos habitacionales, edificios y administraciones.
+            </p>
+          </div>
+
+          <div class="client-card">
+            <h3>Centros comerciales</h3>
+            <p>
+              Atención para espacios comerciales que requieren suministro confiable.
+            </p>
+          </div>
+
+          <div class="client-card">
+            <h3>Purificadoras</h3>
+            <p>
+              Transporte de agua potable para negocios dedicados al tratamiento y venta de agua.
+            </p>
+          </div>
+
+          <div class="client-card">
+            <h3>Negocios</h3>
+            <p>
+              Servicio para comercios, oficinas, locales y empresas.
+            </p>
+          </div>
+
+          <div class="client-card">
+            <h3>Público en general</h3>
+            <p>
+              Cotizaciones de acuerdo con zona, litros requeridos y condiciones de descarga.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="coverage" id="cobertura">
+      <div class="container coverage-grid">
+
+        <div class="coverage-box">
+          <span class="eyebrow" style="color: #caf0f8;">Cobertura</span>
+          <h2>Zonas con atención express</h2>
+          <p>
+            Contamos con atención express en distintas alcaldías de la Ciudad de México.
+            Para otras zonas, consulta disponibilidad.
+          </p>
+
+          <a class="btn btn-whatsapp" href="https://wa.me/525545009751" target="_blank">
+            Consultar disponibilidad
+          </a>
+        </div>
+
+        <div class="zones">
+          <div class="zone">Benito Juárez</div>
+          <div class="zone">Cuauhtémoc</div>
+          <div class="zone">Iztacalco</div>
+          <div class="zone">Venustiano Carranza</div>
+          <div class="zone">Coyoacán</div>
+          <div class="zone">Azcapotzalco</div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="steps" id="proceso">
+      <div class="container">
+
+        <div class="section-head">
+          <span class="eyebrow">Proceso</span>
+          <h2>Cotiza en pocos minutos</h2>
+          <p>
+            Para darte una cotización más precisa, necesitamos conocer algunos detalles del servicio.
+          </p>
+        </div>
+
+        <div class="step-grid">
+
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3>Indica tu colonia</h3>
+            <p>Esto nos ayuda a confirmar cobertura y disponibilidad.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3>Elige litros</h3>
+            <p>Selecciona la cantidad de agua que necesitas.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3>Tipo de descarga</h3>
+            <p>Indica si es en cisterna, sótano, piso o nivel superior.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <h3>Distancia de manguera</h3>
+            <p>Calcula la distancia aproximada del camión a la cisterna.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">5</div>
+            <h3>Confirmación</h3>
+            <p>Te respondemos con disponibilidad y costo del servicio.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="quote-section" id="cotizacion">
+      <div class="container quote-wrap">
+
+        <div class="quote-info">
+          <span class="eyebrow" style="color: #caf0f8;">Cotización</span>
+          <h2>Solicita tu cotización</h2>
+          <p>
+            Completa el formulario y te responderemos lo antes posible con la disponibilidad
+            y el costo del servicio.
+          </p>
+
+          <ul class="quote-list">
+            <li>Servicio de 5:00 am a 11:00 pm</li>
+            <li>Atención de lunes a domingo</li>
+            <li>Diferentes capacidades de pipa</li>
+            <li>Servicio sujeto a cobertura y disponibilidad</li>
+          </ul>
+
+          <a class="btn btn-whatsapp" href="https://wa.me/525545009751" target="_blank">
+            También puedes escribir por WhatsApp
+          </a>
+
+          <div class="payment-box">
+            <strong>Pago contra entrega</strong>
+            <span>Aceptamos efectivo, tarjeta o transferencia.</span>
+          </div>
+        </div>
+
+        <form action="https://formsubmit.co/cotizacion.agua.express15@gmail.com" method="POST">
+
+          <input type="hidden" name="_subject" value="Nueva cotización - Servicio AguaExpress">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+
+          <div class="form-grid">
+
+            <div class="form-group">
+              <label for="nombre">Nombre completo</label>
+              <input type="text" id="nombre" name="Nombre completo" required>
+            </div>
+
+            <div class="form-group">
+              <label for="telefono">Teléfono / WhatsApp</label>
+              <input type="tel" id="telefono" name="Teléfono o WhatsApp" required>
+            </div>
+
+            <div class="form-group">
+              <label for="correo">Correo electrónico</label>
+              <input type="email" id="correo" name="Correo electrónico" required>
+            </div>
+
+            <div class="form-group">
+              <label for="colonia">¿Para qué colonia cotiza?</label>
+              <input type="text" id="colonia" name="Colonia" required>
+            </div>
+
+            <div class="form-group">
+              <label for="agua">¿Cuánta agua requiere?</label>
+              <select id="agua" name="Cantidad de agua requerida" required>
+                <option value="">Selecciona una opción</option>
+                <option value="2,500 litros">2,500 litros</option>
+                <option value="5,000 litros">5,000 litros</option>
+                <option value="7,500 litros">7,500 litros</option>
+                <option value="10,000 litros">10,000 litros</option>
+                <option value="20,000 litros">20,000 litros</option>
+                <option value="45,000 litros">45,000 litros</option>
+                <option value="No estoy seguro">No estoy seguro</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="descarga">¿Dónde será la descarga?</label>
+              <select id="descarga" name="Tipo de descarga" required>
+                <option value="">Selecciona una opción</option>
+                <option value="Cisterna en piso">Cisterna en piso</option>
+                <option value="Sótano">Sótano</option>
+                <option value="Nivel superior">Nivel superior</option>
+                <option value="Tinaco">Tinaco</option>
+                <option value="Otro">Otro</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="manguera">¿Cuánta manguera se requiere aproximadamente?</label>
+              <input 
+                type="text" 
+                id="manguera" 
+                name="Metros aproximados de manguera" 
+                placeholder="Ej. 10 metros, 20 metros, no sé"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="estacionamiento">¿Existe lugar para estacionar la pipa?</label>
+              <select id="estacionamiento" name="Lugar para estacionarse" required>
+                <option value="">Selecciona una opción</option>
+                <option value="Sí">Sí</option>
+                <option value="No">No</option>
+                <option value="No estoy seguro">No estoy seguro</option>
+              </select>
+            </div>
+
+            <div class="form-group full">
+              <label for="mensaje">Comentarios adicionales</label>
+              <textarea 
+                id="mensaje" 
+                name="Comentarios adicionales" 
+                placeholder="Agrega referencias, horarios preferidos o detalles del servicio."
+              ></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">
+                Enviar cotización por correo
+              </button>
+
+              <a class="btn btn-whatsapp" href="https://wa.me/525545009751" target="_blank">
+                Cotizar por WhatsApp
+              </a>
+            </div>
+
+            <p class="form-note">
+              Al enviar el formulario, tu solicitud será enviada a cotizacion.express15@gmail.com.
+              También puedes comunicarte directamente por llamada o WhatsApp al 55 4500 9751.
+            </p>
+
+          </div>
+        </form>
+
+      </div>
+    </section>
+
+    <section class="contact" id="contacto">
+      <div class="container">
+
+        <div class="contact-card">
+
+          <div>
+            <span class="eyebrow">Contacto</span>
+            <h2>¿Necesitas agua potable hoy?</h2>
+            <p>
+              Escríbenos por WhatsApp, llámanos o envía el formulario para recibir tu cotización.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-whatsapp" href="https://wa.me/525545009751" target="_blank">
+                Enviar WhatsApp
+              </a>
+
+              <a class="btn btn-outline" href="tel:5545009751">
+                Llamar ahora
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-details">
+
+            <div class="contact-detail">
+              <span>WhatsApp y llamadas</span>
+              <strong>55 4500 9751</strong>
+            </div>
+
+            <div class="contact-detail">
+              <span>Correo de cotizaciones</span>
+              <strong>cotizacion.agua.express15@gmail.com</strong>
+            </div>
+
+            <div class="contact-detail">
+              <span>Horario</span>
+              <strong>5:00 am a 11:00 pm</strong>
+            </div>
+
+            <div class="contact-detail">
+              <span>Servicio</span>
+              <strong>Lunes a domingo, 365 días del año</strong>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+
+      <div class="footer-brand">
+        <img src="images/logo.png" alt="Logo Servicio AguaExpress">
+        <div>
+          <strong>Servicio AguaExpress</strong>
+          <span>Transporte de agua potable en pipa</span>
+        </div>
+      </div>
+
+      <div class="footer-copy">
+        Servicio sujeto a disponibilidad de zona, capacidad y condiciones de descarga.
+      </div>
+
+    </div>
+  </footer>
+
+  <a class="floating-whatsapp" href="https://wa.me/525545009751" target="_blank" aria-label="WhatsApp">
+    ☎
+  </a>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const menu = document.getElementById("menu");
+
+    menuBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+
+    const menuLinks = document.querySelectorAll("#menu a");
+
+    menuLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        menu.classList.remove("active");
+      });
+    });
+  </script>
+
+</body>
+</html>
