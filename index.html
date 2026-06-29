@@ -4,31 +4,79 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sitio suspendido</title>
+
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       min-height: 100vh;
       display: grid;
       place-items: center;
       font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      color: #222;
+      background: #f3f4f6;
+      color: #111827;
       text-align: center;
       padding: 20px;
     }
+
     .card {
-      background: white;
-      padding: 40px;
+      width: 100%;
+      max-width: 430px;
+      background: #ffffff;
+      padding: 36px 28px;
       border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.08);
-      max-width: 520px;
+      box-shadow: 0 12px 35px rgba(0,0,0,.12);
+    }
+
+    .logo {
+      width: 180px;
+      max-width: 80%;
+      height: auto;
+      display: block;
+      margin: 0 auto 24px;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 26px;
+      font-weight: 800;
+    }
+
+    p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #4b5563;
+    }
+
+    .brand {
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 1px solid #e5e7eb;
+      font-size: 13px;
+      color: #6b7280;
+    }
+
+    .brand strong {
+      color: #111827;
     }
   </style>
 </head>
+
 <body>
-  <div class="card">
+  <main class="card">
+    <img src="images/logoclick.jpeg" alt="Click & Clientes" class="logo">
+
     <h1>Sitio suspendido</h1>
-    <p>Este proyecto se encuentra pausado.</p>
-  </div>
+
+    <p>Este proyecto se encuentra pausado temporalmente.</p>
+
+    <div class="brand">
+      Desarrollo web por <strong>Click & Clientes</strong>
+    </div>
+  </main>
 </body>
 </html>
